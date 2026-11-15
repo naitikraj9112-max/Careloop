@@ -39,7 +39,14 @@ export default function RegisterPage() {
       await signUp(email, password, displayName);
       navigate('/dashboard');
     } catch (err: any) {
-      setError(err.message || 'Registration failed. Please try again.');
+      const msg = err.message || '';
+      if (msg.toLowerCase().includes('rate limit') || msg.toLowerCase().includes('email rate limit')) {
+        setError(
+          'Supabase Free Tier Rate Limit: Supabase limits built-in confirmation emails to 3-4/hour. To fix this immediately: open Supabase Dashboard > Authentication > Providers > Email, and turn OFF "Confirm email".'
+        );
+      } else {
+        setError(msg || 'Registration failed. Please try again.');
+      }
     } finally {
       setLoading(false);
     }
