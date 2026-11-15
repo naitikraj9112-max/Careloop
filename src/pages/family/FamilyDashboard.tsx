@@ -11,6 +11,7 @@ import { Card } from '@/components/ui/Card';
 import { StatusBadge } from '@/components/ui/StatusBadge';
 import { Button } from '@/components/ui/Button';
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner';
+import AdminPatientAIAssistant from '@/components/voice/AdminPatientAIAssistant';
 import { formatTime, formatDateTime } from '@/lib/utils';
 import {
   AlertTriangle,
@@ -260,6 +261,14 @@ export default function FamilyDashboard() {
           <p className="text-xs font-semibold text-neutral-500 mt-0.5">Attention Flag</p>
         </Card>
       </div>
+
+      {/* DeepSeek AI Clinical & Care Assistant for Patient */}
+      <AdminPatientAIAssistant
+        patient={currentPatient}
+        medications={medications}
+        unacknowledgedDosesCount={unacknowledgedCount}
+        upcomingAppointmentsCount={upcomingAppointments.length}
+      />
 
       {/* Two Column Section */}
       <div className="grid md:grid-cols-2 gap-6">

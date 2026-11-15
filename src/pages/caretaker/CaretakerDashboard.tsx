@@ -11,6 +11,7 @@ import { Select } from '@/components/ui/Select';
 import { StatusBadge } from '@/components/ui/StatusBadge';
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner';
 import { EmptyState } from '@/components/ui/EmptyState';
+import AdminPatientAIAssistant from '@/components/voice/AdminPatientAIAssistant';
 import * as auditService from '@/services/auditService';
 import * as notificationService from '@/services/notificationService';
 import * as emailService from '@/services/emailService';
@@ -227,6 +228,12 @@ export default function CaretakerDashboard() {
           <p className="text-xs font-semibold text-neutral-500 mt-0.5">Completed Today</p>
         </div>
       </div>
+
+      {/* DeepSeek AI Clinical & Care Assistant for Patient */}
+      <AdminPatientAIAssistant
+        patient={currentPatient}
+        medications={medications}
+      />
 
       {/* Pending Medication Tasks */}
       <div className="space-y-4">

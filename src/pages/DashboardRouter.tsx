@@ -316,6 +316,18 @@ export default function DashboardRouter() {
               </p>
             </div>
 
+            <div className="bg-[#EBF7EE] border border-[#22C55E]/30 rounded-2xl p-3.5 flex items-center gap-3 text-left">
+              <div className="w-8 h-8 rounded-xl bg-[#22C55E] text-white flex items-center justify-center shrink-0">
+                <Heart className="w-4 h-4 fill-white" />
+              </div>
+              <div className="text-xs">
+                <span className="font-bold text-[#1E3A2F] block">DeepSeek Patient AI Assistant Initialized</span>
+                <span className="text-[#2A4E40] text-[11px]">
+                  Clinical intelligence and multi-language voice chat are now active on your Admin Dashboard.
+                </span>
+              </div>
+            </div>
+
             <div className="pt-2">
               <Button
                 variant="primary"
